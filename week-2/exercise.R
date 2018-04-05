@@ -9,7 +9,7 @@ my_vector <- c(my_num, initials)
 vector_sum <- sum(my_vector)
 
 # Describe why this doesn't work: 
-# 
+# The vector sum can only add numbers not strings
 
 install.packages("stringr")
 
@@ -18,18 +18,19 @@ my_line <- "Hey, hey, this is the library"
 print(str_length(my_line))
 
 # Describe why this doesn't work: 
-# 
+# the varible Str_length hasn't been created
 
 said_the_famous <- paste(my_line, " - ", initial)
 
 # Describe why this doesn't work: 
-# 
+# the varible initial hasn't been created
 
 
 ## Part 2 - Vector and function practice
 
 # Make a vector and use typeof to check what type R considers it to be
-
+vector1 <- c(1, 2, 3)
+typeof(vector1)
 # Write a function `CompareLength` that takes in 2 vectors, and returns the sentence:
 # "The difference in lengths is N"
 
