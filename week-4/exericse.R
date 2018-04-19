@@ -4,8 +4,8 @@ library(dplyr)
 
 # Read in the NBA team data of the 2016-2017 season from the data directory  
 # into a variable called `team.data` using `read.csv`
-
-
+team.data <- read.csv('teams.csv')
+View(team.data)
 # The data.frame team.data should now be accessible to you. 
 # View it, and get some basic information about the number of rows/columns. 
 # Note the "X" preceding some of the column titles as well as the "*" 
@@ -14,16 +14,16 @@ library(dplyr)
 
 
 # Add a column that gives the turnovers to steals ratio (TOV / STL) for each team
-
+team.data <- mutate(team.data, steal_ratio = (TOV / STL ))
 
 
 # Sort the teams from lowest turnover/steal ratio to highest
-
+team.data <- arrange(team.data, steal_ratio)
 
 # Get the team that had the highest Total Rebounds (TRB) only with the columns 
 # Team and TRB  *using one line of code*
-
-
+team_with_high_rebound <- select(team.data, Team, TRB == max(TRB))
+ 
 # Print only the name of the team that had the highest total rebounds
 # (that also happens to be the greatest team of all time)
 
